@@ -53,6 +53,9 @@ dependencies {
 
 	//add validation
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	//add actuator
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	
 
 }

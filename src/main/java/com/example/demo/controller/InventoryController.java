@@ -59,9 +59,6 @@ public class InventoryController {
     @PostMapping
     public ResponseEntity<Inventory> addInventory(@RequestBody Inventory inventory) {
         Inventory addedInventory = inventoryService.addInventory(inventory);
-        String username = "admin";
-        String password = "admin";
-        System.out.println("Username: " + username + " Password: " + password);
         return ResponseEntity.status(HttpStatus.CREATED).body(addedInventory);
     }
 
