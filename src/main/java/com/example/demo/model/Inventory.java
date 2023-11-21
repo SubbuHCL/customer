@@ -5,13 +5,15 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "invetorys")
+@Table(name = "inventory")
 @Getter
 @Setter
 @Data
+@NoArgsConstructor
 public class Inventory {
 
     private Long id;
