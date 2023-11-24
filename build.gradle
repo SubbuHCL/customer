@@ -1,14 +1,14 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '2.7.17'
-	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'org.springframework.boot' version '3.2.0'
+	id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'com.example.demo'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '1.8'
+	sourceCompatibility = '17'
 }
 
 repositories {
@@ -39,23 +39,18 @@ dependencies {
 
 	//add swagger
 	//implementation 'org.springdoc:springdoc-openapi-ui:1.6.12'
-	//implementation 'org.modelmapper:modelmapper:3.1.0'
-	implementation 'io.springfox:springfox-boot-starter:3.0.0'
-	implementation('io.springfox:springfox-swagger-ui:3.0.0') {
-		exclude module: 'springfox-boot-starter'
-	}
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+	
 	//add hamcrest
 	testImplementation 'org.hamcrest:hamcrest:2.2'
-
-	//add cucumber
-	testImplementation 'io.cucumber:cucumber-java:7.8.1'
-	testImplementation 'io.cucumber:cucumber-junit:7.8.1'
-
 	//add validation
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
 	//add actuator
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// add wiremock
+	testImplementation 'com.github.tomakehurst:wiremock-jre8:2.35.0'
 	
 
 }

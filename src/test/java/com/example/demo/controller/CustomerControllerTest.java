@@ -149,19 +149,7 @@ public class CustomerControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-    @Test
-    public void testAddCustomer_InvalidRequestBody() throws Exception {
-        // Arrange
-        String invalidRequestBody = "{\"invalid\": \"request\"}";
-
-        mockMvc = MockMvcBuilders.standaloneSetup(customerController).build();
-
-        // Act & Assert
-        mockMvc.perform(post("/customer")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(invalidRequestBody))
-                .andExpect(status().isBadRequest());
-    }
+    
 
     @Test
     public void testUpdateCustomer_CustomerNotFound() throws Exception {

@@ -82,4 +82,9 @@ public class InventoryService {
         }
         return false;
     }
+
+    public boolean checkInventoryExists(Long id) {
+        Optional<Inventory> inventory = inventoryRepository.findById(id);
+        return inventory.isPresent();
+    }
 }
