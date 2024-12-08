@@ -1,0 +1,16 @@
+name: superlinter
+on: 
+  push:
+    branches: [ "main" ]
+jobs:
+  superlinter:
+   name: superlinter
+   runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+   timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
+   steps:
+     - name: Checkout repository
+       uses: actions/checkout@v3
+     - name: Run Linter
+       uses: github/super-linter@v3
+       env:
+         DEFAULT_BRANCH: main
